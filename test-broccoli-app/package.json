@@ -18,7 +18,7 @@
     "babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner": "workspace:*",
     "@ember/optional-features": "^2.0.0",
     "@ember/test-helpers": "^2.8.1",
-    "@glimmer/component": "^1.1.2",
+    "@glimmer/component": "^2.0.0",
     "@glimmer/tracking": "^1.1.2",
     "broccoli-asset-rev": "^3.0.0",
     "ember-auto-import": "^2.4.3",
