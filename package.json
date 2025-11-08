@@ -1,0 +1,31 @@
+{
+  "name": "babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner",
+  "version": "1.0.0",
+  "description": "A Babel plugin to transform newer modules to older modules for allowing older projects to use newer libraries",
+  "main": "src/index.js",
+  "repository": "https://github.com/NullVoxPopuli/ember-polyfill-get-and-set-owner-from-ember-owner",
+  "author": "NullVoxPopuli",
+  "scripts": {
+    "format": "prettier . --write",
+    "test": "vitest"
+  },
+  "keywords": [
+    "babel-plugin",
+    "ember",
+    "service",
+    "inject"
+  ],
+  "license": "MIT",
+  "packageManager": "pnpm@10.15.0",
+  "peerDependencies": {
+    "@babel/core": "^7.0.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.22.0",
+    "@babel/core": "^7.22.0",
+    "@babel/preset-env": "^7.22.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-ember-template-tag": "^2.1.0",
+    "vitest": "^3.2.4"
+  }
+}
