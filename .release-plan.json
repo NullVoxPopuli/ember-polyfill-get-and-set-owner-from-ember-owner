@@ -1,0 +1,22 @@
+{
+  "solution": {
+    "babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner": {
+      "impact": "patch",
+      "oldVersion": "1.0.4",
+      "newVersion": "1.0.5",
+      "tagName": "latest",
+      "constraints": [
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :bug: Bug Fix"
+        },
+        {
+          "impact": "patch",
+          "reason": "Appears in changelog section :house: Internal"
+        }
+      ],
+      "pkgJSONPath": "./package.json"
+    }
+  },
+  "description": "## Release (2026-04-19)\n\n* babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner 1.0.5 (patch)\n\n#### :bug: Bug Fix\n* `babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner`\n  * [#1](https://github.com/NullVoxPopuli/ember-polyfill-get-and-set-owner-from-ember-owner/pull/1) Always skip ember-source files, including .embroider copies ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n\n#### :house: Internal\n* `babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner`\n  * [#2](https://github.com/NullVoxPopuli/ember-polyfill-get-and-set-owner-from-ember-owner/pull/2) Release plan ([@NullVoxPopuli](https://github.com/NullVoxPopuli))\n\n#### Committers: 2\n- @NullVoxPopuli's reduced-access machine account for AI usage ([@NullVoxPopuli-ai-agent](https://github.com/NullVoxPopuli-ai-agent))\n- [@NullVoxPopuli](https://github.com/NullVoxPopuli)\n"
+}
