@@ -5,10 +5,24 @@ module.exports = function (babel) {
     name: "undeprecate-inject-from-at-ember-service",
     visitor: {
       ImportDeclaration(path, state) {
+        // ember-source's own `@ember/application/index.js` re-exports
+        // `getOwner`/`setOwner` by importing them from `@ember/owner`:
+        //
+        //     import { getOwner as actualGetOwner, setOwner as actualSetOwner }
+        //       from '@ember/owner';
+        //     export const getOwner = actualGetOwner;
+        //     export const setOwner = actualSetOwner;
+        //
+        // Rewriting that to `from '@ember/application'` turns the module
+        // into a self-import; rollup then collapses it to
+        // `const getOwner = getOwner`, which trips TDZ at load time.
+        //
+        // Skip anything whose filename is inside ember-source's package,
+        // regardless of whether it lives in node_modules directly or has
+        // been copied into `.embroider/rewritten-packages/` by
+        // @embroider/compat.
         if (state.filename?.includes("/ember-source/")) {
-          if (!state.filename.includes("/.embroider/")) {
-            return;
-          }
+          return;
         }
 
         // Only process imports from '@ember/owner'
