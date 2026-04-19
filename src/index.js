@@ -5,8 +5,8 @@ module.exports = function (babel) {
     name: "undeprecate-inject-from-at-ember-service",
     visitor: {
       ImportDeclaration(path, state) {
-        if (state.filename?.includes('/ember-source/')) {
-          if (!state.filename.includes('/.embroider/')) {
+        if (state.filename?.includes("/ember-source/")) {
+          if (!state.filename.includes("/.embroider/")) {
             return;
           }
         }
@@ -16,7 +16,7 @@ module.exports = function (babel) {
           return;
         }
 
-        path.node.source.value = '@ember/application';
+        path.node.source.value = "@ember/application";
       },
     },
   };

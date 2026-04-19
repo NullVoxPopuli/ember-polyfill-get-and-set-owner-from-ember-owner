@@ -11,21 +11,27 @@ describe("babel-plugin-ember-polyfill-get-and-set-owner-from-ember-owner", () =>
     }).code;
   }
 
-  test('does nothing if nothing needs to happen', () => {
+  test("does nothing if nothing needs to happen", () => {
     const input = "import { getOwner } from '@ember/application';";
     const output = transform(input);
-    expect(output).toMatchInlineSnapshot(`"import { getOwner } from '@ember/application';"`);
+    expect(output).toMatchInlineSnapshot(
+      `"import { getOwner } from '@ember/application';"`,
+    );
   });
 
-  test('renames', () => {
+  test("renames", () => {
     const input = "import { getOwner } from '@ember/owner';";
     const output = transform(input);
-    expect(output).toMatchInlineSnapshot(`"import { getOwner } from "@ember/application";"`);
+    expect(output).toMatchInlineSnapshot(
+      `"import { getOwner } from "@ember/application";"`,
+    );
   });
 
-  test('handles both getOwner and setOwner', () => {
+  test("handles both getOwner and setOwner", () => {
     const input = "import { getOwner, setOwner } from '@ember/owner';";
     const output = transform(input);
-    expect(output).toMatchInlineSnapshot(`"import { getOwner, setOwner } from "@ember/application";"`);
+    expect(output).toMatchInlineSnapshot(
+      `"import { getOwner, setOwner } from "@ember/application";"`,
+    );
   });
 });
